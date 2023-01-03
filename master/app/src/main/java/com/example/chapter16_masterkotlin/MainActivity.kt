@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
         setListener()
     }
     override fun onDestroy() {
-        dbrw.close() //關閉資料庫
+        dbrw.close()
         super.onDestroy()
     }
-    //設定監聽器
+
     private fun setListener() {
         val ed_book = findViewById<EditText>(R.id.ed_book)
         val ed_price = findViewById<EditText>(R.id.ed_price)
@@ -77,7 +77,6 @@ class MainActivity : AppCompatActivity() {
             items.clear()
             showToast("共有${c.count}筆資料")
             for (i in 0 until c.count) {
-                //加入新資料
                 items.add("書名:${c.getString(0)}\t\t\t\t 價格:${c.getInt(1)}")
                 c.moveToNext()
             }
